@@ -1,6 +1,4 @@
 [build]
-  command = "quarto render"
+  # download & extract Quarto, add its bin to PATH for this command, then render
+  command = "bash -lc 'curl -L -o /tmp/quarto-linux-amd64.tar.gz https://quarto.org/download/latest/quarto-linux-amd64.tar.gz && mkdir -p /opt/build/quarto && tar -xzf /tmp/quarto-linux-amd64.tar.gz -C /opt/build/quarto --strip-components=1 && PATH=/opt/build/quarto/bin:$PATH quarto render'"
   publish = "_site"
-
-[build.environment]
-  NODE_VERSION = "18"
