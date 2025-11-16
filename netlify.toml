@@ -1,4 +1,16 @@
+##############################
+# Netlify configuration file #
+##############################
+
+# List of Build plugins
+[[plugins]]
+# Use the current plugin in builds for testing and debugging.
+# Local path to the plugin.
+package = "."
+  # Plugin configuration
+  #  [plugins.inputs]
+  #  foo = "bar"
+
 [build]
-  # download & extract Quarto, add its bin to PATH for this command, then render
-  command = "bash -lc 'curl -L -o /tmp/quarto-linux-amd64.tar.gz https://quarto.org/download/latest/quarto-linux-amd64.tar.gz && mkdir -p /opt/build/quarto && tar -xzf /tmp/quarto-linux-amd64.tar.gz -C /opt/build/quarto --strip-components=1 && PATH=/opt/build/quarto/bin:$PATH quarto render'"
-  publish = "_site"
+# Dummy build command
+command = "echo 'done'"
